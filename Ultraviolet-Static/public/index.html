@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home</title>
+    <link rel="preload" as="font" href="./assets/fonts/IntelOneMono-Regular.woff2" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="https://ssl.gstatic.com/classroom/favicon.png">
+    <style>
+        * {
+            font-family: 'IntelOneMono-Regular', monospace;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            animation: fadeIn cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        input {
+            background-color: #0E0E0E;
+            color: white;
+            padding: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border: none;
+            outline: solid #9090A3 1px !important;
+            border-radius: 72px;
+            height: 32px;
+        }
+
+        input:focus {
+            outline: solid #9090A3 2px !important;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        function op() {
+            win = window.open()
+            link = document.createElement('link');
+            link.rel = 'icon';
+            link.href = "https://ssl.gstatic.com/classroom/favicon.png";
+            link.type = "image/png";
+            win.document.head.appendChild(link);
+            win.document.title = "Home";
+            iframe = document.createElement("iframe")
+            iframe.src = `${window.location.origin}/main.html`
+            iframe.style.width = "100%"
+            iframe.style.height = "100%"
+            iframe.style.position = "fixed"
+            iframe.style.border = "none"
+            iframe.style.top = 0
+            iframe.style.left = 0
+            win.document.body.appendChild(iframe)
+            window.location = "about:blank"
+            document.title = "Amazing Scientific Discoveries!"
+            window.close()
+        }
+    </script>
+    <div id="newTab"
+        style="position: fixed; top: 45%; left: 50%; transform: translateX(-50%) translateY(-50%); text-align: center;">
+        <h1>UTech</h1>
+        <input type="button" value=">" id="urlInput" onclick="op()">
+        <p id="error" style="color: red;"></p>
+        <p id="error-code" style="color: red;"></p>
+    </div>
+</body>
+
+</html>
